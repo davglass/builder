@@ -95,6 +95,19 @@
         </then>
     </if>
 
+    <macrodef name="uglify">
+        <attribute name="src" />
+        <attribute name="dest" />
+        <attribute name="args" />
+        <sequential>
+            <exec executable="uglifyjs" failifexecutionfails="true">
+                <arg value="-o"/>
+                <arg value="@{dest}"/>
+                <arg value="@{src}"/>
+            </exec>
+        </sequential>
+    </macrodef>
+
     <macrodef name="concatsource">
         <attribute name="destfile" />
         <attribute name="sourcedir" />

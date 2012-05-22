@@ -79,7 +79,8 @@
 
     <!-- MIN -->
     <target name="minify" description="Create component-min.js from component.js">
-        <yuicompress src="${component.builddir}/${component.basefilename}.js" dest="${component.builddir}/${component.basefilename}-min.js" args="${yuicompressor.js.args.internal}" />
+        <!--yuicompress src="${component.builddir}/${component.basefilename}.js" dest="${component.builddir}/${component.basefilename}-min.js" args="${yuicompressor.js.args.internal}" /-->
+        <uglify src="${component.builddir}/${component.basefilename}.js" dest="${component.builddir}/${component.basefilename}-min.js" args="${yuicompressor.js.args.internal}" />
     	<if>
             <available file="${component.builddir}/lang" type="dir" />
     	    <then>
